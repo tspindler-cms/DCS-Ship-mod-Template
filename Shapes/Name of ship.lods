@@ -1,0 +1,10 @@
+model = {
+	lods = {		
+		{"name of ship_lod_0.edm",1000.000000}; 
+		{"name of ship_lod_1.edm",5000.000000};
+		{"name of ship_lod_2.edm",10500.000000};
+		{"name of ship_lod_3.edm",15500.000000};
+		{"name of ship_lod_5.edm",180000.000000},
+	};
+	collision_shell = "name of ship_Collision_Shell.edm";
+}
