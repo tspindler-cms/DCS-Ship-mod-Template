@@ -184,7 +184,6 @@ GT.ThreatRange		= GT.airWeaponDist;
 GT.Singleton		= "yes";
 GT.mapclasskey		= "P0091000065"; --map icon >>MissionEditor\data\NewMap\images
 GT.attribute		= {wsType_Navy, wsType_Ship, wsType_AirCarrier, WSTYPE_PLACEHOLDER, -- >> \DCS World Version\Scripts\Database\wsTypes.lua
---unfortunately the list with these have since been hidden by ED along with the ships lua files
 						"Aircraft Carriers", 
 						"Arresting Gear",  --if it has arrester wires
 						"catapult", --if it has catapults
@@ -192,12 +191,13 @@ GT.attribute		= {wsType_Navy, wsType_Ship, wsType_AirCarrier, WSTYPE_PLACEHOLDER
 						"RADAR_BAND1_FOR_ARM",
 						"RADAR_BAND2_FOR_ARM",
 					};
+					--unfortunately the list with these have since been hidden by ED along with the ships lua files
 GT.Categories		= {
-						{name = "AircraftCarrier"},
+						{name = "AircraftCarrier"}, --aircraft carrier
 						{name = "AircraftCarrier With Catapult"}, --if it has catapults
 						{name = "AircraftCarrier With Tramplin"}, -- if it has a ramp
-						{name = "Armed Ship"}
-						--{name = "AircraftCarrier With Arresting Gear"} -- disables mod when enabled, showws on SC module and Stennis
+						{name = "Armed Ship"} -- has weapons
+						--{name = "AircraftCarrier With Arresting Gear"} -- disables mod when enabled, showws on SC module and Stennis and Forrestal.
 					};	
 					
 					
@@ -205,12 +205,13 @@ GT.Categories		= {
 GT.tags  = 
 {
 	"ship type",
+	"if you want you can add it to another tag", --if only one delete this
 }
 --[[ 
 
 example
 GT.tags  = {"Battlecruiser",}
-
+------------------------------------------------------------
 ship type =
 Carrier
 Battleship
@@ -224,7 +225,24 @@ Submarine
 Support
 Amphibious Assault
 
-File location >>DCS World version\MissionEditor\me_ship.lua
+File location >>DCS World version\MissionEditor\modules\me_ship.lua
+
+---------------------------------------
+attributes
+["ski_jump"] = {},
+["catapult"] = {},
+["Aircraft Carriers"] = {"Heavy armed ships",},
+["Cruisers"] = {"Heavy armed ships",},
+["Destroyers"] = {"Heavy armed ships",},
+["Frigates"] = {"Heavy armed ships",},
+["Corvettes"] = {"Heavy armed ships",},
+["Submarines"] = {"Heavy armed ships",},
+["Heavy armed ships"] = {"Armed ships", "Armed Air Defence", "HeavyArmoredUnits",},
+["Light armed ships"] = {"Armed ships","NonArmoredUnits"},
+["Armed ships"] = {"Ships"},
+["Unarmed ships"] = {"Ships","HeavyArmoredUnits",},
+["Ships"] = {"All",}
+
 --]]	
 
 add_surface_unit(GT)
