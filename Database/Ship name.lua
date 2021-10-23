@@ -58,7 +58,9 @@ GT.numParking = 2 -- runways
 GT.Plane_Num_ = 12 --number of planes, not sure if it matters in game
 GT.Helicopter_Num_ = 8 -- Number heli spawns
 
---LSO view          high quality edm file, whatever you named the connector   
+-- the new LOS stuff is still new to me but this is what I have found out by looking through the lua files
+
+--LSO view          high quality edm file, whatever you named the connector , Visiblity arg   , Position of camera
 local LSO_Station = { HQ_model = "empty", dockConnector  = "LSO_VIEW" , hide_argument = 821 , cameraPos = {-110+1,19.8,-18+0.5,180}} --this camera pos works
 
 GT.Stations = 	{	LSO = LSO_Station, }
@@ -67,13 +69,13 @@ GT.LSOView = {cockpit = "empty", position = {--[[connector = "LSO_VIEW", ]]offse
 
 
 -- Landing point
-GT.Landing_Point	= {101.926,   11.812,   -12.378} -- y z x 7.324, 11.812, -45.249 
+GT.Landing_Point	= {101.926,   11.812,   -12.378} -- y z x You need this otherwise the aircraft will not load on the deck
 
 -- smoke density and position
 GT.exhaust = {
-	  [1] = { size = 0.2 , pos = {0.0, 28.0, 16.0 } }, 
-      --[2] = { size = 1.0 , pos = {-1.9, 29.0, 14.0 } },		--Y, Z, X
+	  [1] = { size = 0.2 , pos = {0.0, 28.0, 16.0 } }, --Y, Z, X
 }
+      --[2] = { size = 1.0 , pos = {-1.9, 29.0, 14.0 } },	--if you have 2 stacks then enable this	
 
 
 GT.animation_arguments.catapult_shuttles = {145, 146, 147, 148} --shuttle args
@@ -159,7 +161,7 @@ GT.airFindDist = 28000 -- Max detenction range air threats (meters)
 --Radar info
 GT.WS = {}
 GT.WS.maxTargetDetectionRange = 25000; --450000
-GT.WS.radar_type = 104
+GT.WS.radar_type = 104 --104= Short range, 103 = Mid range at a guess 102 = Long range
 GT.WS.searchRadarMaxElevation = math.rad(60);
 local ws;
 
@@ -168,7 +170,7 @@ local ws;
 -------------------------------------------------------------------------
 
 GT.Name = "Liveries folder name" -- folder name for Liveries
-GT.DisplayName = _("name of ship") -- name in game
+GT.DisplayName = _("name of ship") -- name in game in ME and on the tape at the bottom
 GT.DisplayNameShort = _("name") -- Label name
 GT.Rate = 5500.000000 
 
