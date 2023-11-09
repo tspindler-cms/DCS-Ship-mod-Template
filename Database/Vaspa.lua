@@ -1,14 +1,15 @@
 -- Ship template by Joey45 edit as you see fit 
--- Name of ship and who by
+-- Vaspa by TeTeT
+
 
 GT = {};
-dofile(current_mod_path..'/scripts/ShipnameRunwaysAndRoutes.lua') -- the runways and taxiway lua file
+-- dofile(current_mod_path..'/scripts/ShipnameRunwaysAndRoutes.lua') -- the runways and taxiway lua file
 GT_t.ws = 0;
 
 set_recursive_metatable(GT, GT_t.generic_ship) -- all ships have this
 
 GT.visual = {}
-GT.visual.shape = "NameHere"  -- name of LODs lua
+GT.visual.shape = "vaspa_dcs"  -- name of LODs lua
 GT.visual.shape_dstr = "" -- if there is a destruction model it goes here
 
 GT.life = 7200; -- hit points
@@ -61,15 +62,15 @@ GT.Helicopter_Num_ = 8 -- Number heli spawns
 -- the new LOS stuff is still new to me but this is what I have found out by looking through the lua files
 
 --LSO view          high quality edm file, whatever you named the connector , Visiblity arg   , Position of camera
-local LSO_Station = { HQ_model = "empty", dockConnector  = "LSO_VIEW" , hide_argument = 821 , cameraPos = {-110+1,19.8,-18+0.5,180}} --this camera pos works
+-- local LSO_Station = { HQ_model = "empty", dockConnector  = "LSO_VIEW" , hide_argument = 821 , cameraPos = {-110+1,19.8,-18+0.5,180}} --this camera pos works
 
-GT.Stations = 	{	LSO = LSO_Station, }
+-- GT.Stations = 	{	LSO = LSO_Station, }
 
-GT.LSOView = {cockpit = "empty", position = {--[[connector = "LSO_VIEW", ]]offset = {0.0, 0.0, 0.0, 0.0, 0.0}}} --this offset has no effect but the line needs to be here
+-- GT.LSOView = {cockpit = "empty", position = {--[[connector = "LSO_VIEW", ]]offset = {0.0, 0.0, 0.0, 0.0, 0.0}}} --this offset has no effect but the line needs to be here
 
 
 -- Landing point
-GT.Landing_Point	= {101.926,   11.812,   -12.378} -- y z x You need this otherwise the aircraft will not load on the deck
+-- GT.Landing_Point	= {101.926,   11.812,   -12.378} -- y z x You need this otherwise the aircraft will not load on the deck
 
 -- smoke density and position
 GT.exhaust = {
@@ -78,7 +79,7 @@ GT.exhaust = {
       --[2] = { size = 1.0 , pos = {-1.9, 29.0, 14.0 } },	--if you have 2 stacks then enable this	
 
 
-GT.animation_arguments.catapult_shuttles = {145, 146, 147, 148} --shuttle args
+--[[ GT.animation_arguments.catapult_shuttles = {145, 146, 147, 148} --shuttle args
 GT.animation_arguments.arresting_wires = {141, 142, 143, 144} -- can't get the visibilty anim to work, differnt #arg numbers on the Stennis and SC
 GT.animation_arguments.holdback_bars_pos = {817, 818, 819, 820} 
 GT.animation_arguments.holdback_bars_angle = {808, 809, 810, 811} 
@@ -91,7 +92,7 @@ GT.animation_arguments.elevators_fences_bottom = {28, 30, 32, 34}; --hanger fenc
 GT.animation_arguments.alarm_state = 10; -- for the nets around the boat and or weapon stations or other stuff like antennas going up or platforms going from green state to red state
 GT.animation_arguments.bubbles = {138, 139} -- doesn't go back down ED bug
 GT.animation_arguments.landing_strip_illumination = 150; --runway lights
-
+ ]]
 
 GT.animation_arguments.radar1_rotation = 1; -- Radar 1 Rotation main radar
 GT.radar1_period = 1; --speed
@@ -104,12 +105,12 @@ GT.radar1_period = 5; --speed
 
 -- for lights you can look at the shps in the modelviewer 
 --                             {int ArgumentNo, float OffValue, float OnValue, [float AnimationDuration],  [bool cycleAnimation]}
-GT.carrierIlluminationStates = { 
+--[[ GT.carrierIlluminationStates = { 
 								 {{307, 0.0, 0.45}, {308, 0.0, 0.45}, {790, 0.0, 0.60}, {792, 0.0, 0.37}}, --NAV_LIGHTS
 								 {{307, 0.0, 0.75}, {308, 0.0, 0.75}, {790, 0.0, 0.50}, {792, 0.0, 0.45}}, -- AC_LAUNCH_STATE
 								 {{307, 0.0, 0.30}, {308, 0.0, 0.30}, {150, 0.0, 1.00}, {790, 0.0, 0.50}, {792, 0.0, 0.37}}, -- AC_RECOVERY_STATE
 								}
-								
+ ]]								
 --Damage Model
 GT.DM = {
     { area_name = "NOSE_R_01", 				area_arg = 70, area_life = 150, area_fire = { connector = "FIRE_NOSE_R_01", size = 0.5}},
@@ -169,9 +170,9 @@ local ws;
 
 -------------------------------------------------------------------------
 
-GT.Name = "Liveries folder name" -- folder name for Liveries
-GT.DisplayName = _("name of ship") -- name in game in ME and on the tape at the bottom
-GT.DisplayNameShort = _("name") -- Label name
+GT.Name = "Liveries" -- folder name for Liveries
+GT.DisplayName = _("Vaspa Torpedoboat") -- name in game in ME and on the tape at the bottom
+GT.DisplayNameShort = _("Vaspa") -- Label name
 GT.Rate = 5500.000000 
 
 GT.Sensors = {  OPTIC = {"long-range naval optics", "long-range naval LLTV", "long-range naval FLIR"}, --optics types
@@ -204,9 +205,9 @@ GT.Categories		= {
 -- categories in the mission editor 
 GT.tags  = 
 {
-	"ship type",
-	"if you want you can add it to another tag", --if only one delete this
-}
+	"Torpedoboat",
+	"Fast Attack Craft"
+};
 --[[ 
 
 example

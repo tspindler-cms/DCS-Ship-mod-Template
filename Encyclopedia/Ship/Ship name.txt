@@ -1,5 +1,5 @@
-Ship name
+Vaspa Torpdeo Boat
 
-Ship name.edm
+vaspa_dcs.edm
 
 Specifications-

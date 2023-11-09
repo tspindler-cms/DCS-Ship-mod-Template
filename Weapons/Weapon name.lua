@@ -1,4 +1,4 @@
-local SEACAT = { 
+--[[ local SEACAT = { 
 
 	category		= CAT_MISSILES,
 	name			= "name",
@@ -86,4 +86,4 @@ declare_weapon(name)
 - const int Autopilot = 5; // autonomous (INS + map, GPS, TV, IIR ...)
 - const int SemiActiveRadar = 6; // semi-radar semi-active radar (SAR) radiosodus
 - const int SemiAutoAT = 7; // semiautomatic control from the ATGM platform, fly to woPoint, the woPoint coordinates are changed by the platform.
---]]
+--]] ]]

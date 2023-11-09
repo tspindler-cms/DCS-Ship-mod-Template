@@ -1,0 +1,6 @@
+model = {
+	lods = {		
+		{"vaspa_dcs.edm",1000.000000}; 
+	};
+	collision_shell = "vaspa_dcs.edm";
+}
