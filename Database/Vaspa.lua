@@ -12,34 +12,34 @@ GT.visual = {}
 GT.visual.shape = "vaspa_dcs"  -- name of LODs lua
 GT.visual.shape_dstr = "" -- if there is a destruction model it goes here
 
-GT.life = 7200; -- hit points
-GT.mass = 11339.809; -- KGs
+GT.life = 600; -- 7200; -- hit points
+GT.mass = 4000; -- 11339.809; -- KGs
 GT.max_velocity = 14.4 --M/S
 GT.race_velocity = 12.1 --M/S
 GT.economy_velocity = 7.7 --M/S 
 GT.economy_distance = 13,000 -- KM
 GT.race_distance = 2.778e+006
-GT.shipLength = 225.20 -- o.a in meters
-GT.Width = 43.90 --15 --meters
-GT.Height = 35.226 --335.226 from sea level I think
-GT.Length = 225.20 -- deck length I think
-GT.DeckLevel = 11.816 -- height of deck
-GT.X_nose = 107.0 -- bow wave
-GT.X_tail = -104.5 -- wake
-GT.Tail_Width = 8 --wake width
+GT.shipLength = 50; -- 225.20 -- o.a in meters
+GT.Width = 15; -- 43.90 --15 --meters
+GT.Height = 10; -- 35.226 --335.226 from sea level I think
+GT.Length = 50; -- 225.20 -- deck length I think
+GT.DeckLevel = 3; -- 11.816 -- height of deck
+GT.X_nose = 20; -- 107.0 -- bow wave
+GT.X_tail = -30; -- -104.5 -- wake
+GT.Tail_Width = 4; -- 8 --wake width
 GT.Gamma_max = 0.35 -- no idea
 GT.Om = 0.05 --no idea
-GT.speedup = 0.119249; --time it takes to accelerate
-GT.R_min = 665.8 -- turn radius
+GT.speedup = 0.2; -- 0.119249; --time it takes to accelerate
+GT.R_min = 100; -- 665.8 -- turn radius
 
-GT.RCS = 100000 -- new in 2.7 ----estimated RCS in square meters
+GT.RCS = 1000; -- 100000 -- new in 2.7 ----estimated RCS in square meters
 GT.IR_emission_coeff = 0.9 -- new in 2.7 not sure the params
 
 
-GT.TACAN		   = true;		--If it has TACAN say true if not say false or not have this entry
-GT.TACAN_position = {7.006,  43.155,  -14.1} --position of tacan TX	
+GT.TACAN		   = false;		--If it has TACAN say true if not say false or not have this entry
+-- GT.TACAN_position = {7.006,  43.155,  -14.1} --position of tacan TX	
 
-GT.ICLS = true; -- IF it has ICLS say true if not say false or not have this entry
+--[[ GT.ICLS = true; -- IF it has ICLS say true if not say false or not have this entry
 GT.ICLS_Localizer_position =  {-109.324,  9.685,  7.715, 189.0}	-- {x [m], y [m], z [m], yaw [deg]} 
 GT.ICLS_Glideslope_position = {-14.694,  19.945, 13.212,   3.5}	-- {x [m], y [m], z [m], glideslope = 3.5 [deg]}
 --Optical Landing System
@@ -51,14 +51,14 @@ MeatBallArg = 151,
 GlideslopeBasicAngle = 3.5, 
 VerticalCoverageAngle = 1.7
 }
-
+ ]]
 GT.distFindObstacles = 10000
 
 
-GT.numParking = 2 -- runways
+--[[ GT.numParking = 2 -- runways
 GT.Plane_Num_ = 12 --number of planes, not sure if it matters in game
 GT.Helicopter_Num_ = 8 -- Number heli spawns
-
+ ]]
 -- the new LOS stuff is still new to me but this is what I have found out by looking through the lua files
 
 --LSO view          high quality edm file, whatever you named the connector , Visiblity arg   , Position of camera
@@ -170,7 +170,7 @@ local ws;
 
 -------------------------------------------------------------------------
 
-GT.Name = "Liveries" -- folder name for Liveries
+GT.Name = "tetet_vaspa" -- folder name for Liveries
 GT.DisplayName = _("Vaspa Torpedoboat") -- name in game in ME and on the tape at the bottom
 GT.DisplayNameShort = _("Vaspa") -- Label name
 GT.Rate = 5500.000000 
@@ -184,7 +184,7 @@ GT.DetectionRange	= GT.airFindDist;
 GT.ThreatRange		= GT.airWeaponDist;
 GT.Singleton		= "yes";
 GT.mapclasskey		= "P0091000065"; --map icon >>MissionEditor\data\NewMap\images
-GT.attribute		= {wsType_Navy, wsType_Ship, wsType_AirCarrier, WSTYPE_PLACEHOLDER, -- >> \DCS World Version\Scripts\Database\wsTypes.lua
+--[[ GT.attribute		= {wsType_Navy, wsType_Ship, wsType_AirCarrier, WSTYPE_PLACEHOLDER, -- >> \DCS World Version\Scripts\Database\wsTypes.lua
 						"Aircraft Carriers", 
 						"Arresting Gear",  --if it has arrester wires
 						"catapult", --if it has catapults
@@ -200,7 +200,17 @@ GT.Categories		= {
 						{name = "Armed Ship"} -- has weapons
 						--{name = "AircraftCarrier With Arresting Gear"} -- disables mod when enabled, showws on SC module and Stennis and Forrestal.
 					};	
-					
+]]							
+GT.attribute = {wsType_Navy,wsType_Ship,wsType_ArmedShip,wsType_GenericLightArmoredShip,		
+                    "Cruisers",
+                    "RADAR_BAND1_FOR_ARM",
+                    "DetectionByAWACS",
+				};
+ 	
+
+GT.Categories = {
+					{name = "Armed Ship"},
+				};
 					
 -- categories in the mission editor 
 GT.tags  = 
