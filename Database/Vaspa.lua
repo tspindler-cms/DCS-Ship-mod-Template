@@ -146,39 +146,46 @@ GT.WS.searchRadarMaxElevation = math.rad(60);
 local ws;
 
 -- weapon systems goes here
-GT_t.WS_t.ship_Bofors_40_Mk_12 = {name = "40 mm Bofors Mk 12"};
-GT_t.WS_t.ship_Bofors_40_Mk_12.angles = {
+
+GT_t.WS_t.ship_2x23mm = {name = "2x23mm 2A14x2"};
+GT_t.WS_t.ship_2x23mm.angles = {
                     {math.rad(180), math.rad(-180), math.rad(-5), math.rad(90)},
                     };
-GT_t.WS_t.ship_Bofors_40_Mk_12.omegaY = math.rad(115) -- Block 1B
-GT_t.WS_t.ship_Bofors_40_Mk_12.omegaZ = math.rad(116) -- Block 1B
-GT_t.WS_t.ship_Bofors_40_Mk_12.pidY = {p=300, i = 0.05, d = 10.0, inn = 1000};
-GT_t.WS_t.ship_Bofors_40_Mk_12.pidZ = {p=300, i = 0.05, d = 10.0, inn = 1000};
-GT_t.WS_t.ship_Bofors_40_Mk_12.reference_angle_Z = 0
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN = {}
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1] = {}
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].type = 3
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].distanceMin = 10
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].distanceMax = 7160 -- effective shooting
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].max_trg_alt = 3800
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].reactionTime = 1.8
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].beamWidth = math.rad(1);
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].sensor = {}
--- set_recursive_metatable(GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].sensor, GT_t.WSN_t[3])
-set_recursive_metatable(GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].sensor, GT_t.WSN_t[10])
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL = {}
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1] = {}
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].ammo_capacity = 560;
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].shell_name = {"Bofors_40_Mk12_HE"};
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].shell_display_name = "40mm HE";
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].shot_delay = 60/120 -- 120 rpm
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].reload_time = 1000000; -- never during the mission (ship autogun)
-GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].BR = { {pos = {3.478, 0, 0} }, }
+GT_t.WS_t.ship_2x23mm.omegaY = math.rad(115) -- Block 1B
+GT_t.WS_t.ship_2x23mm.omegaZ = math.rad(116) -- Block 1B
+GT_t.WS_t.ship_2x23mm.pidY = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_2x23mm.pidZ = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_2x23mm.reference_angle_Z = 0
+GT_t.WS_t.ship_2x23mm.LN = {}
+GT_t.WS_t.ship_2x23mm.LN[1] = {}
+GT_t.WS_t.ship_2x23mm.LN[1].type = 3
+GT_t.WS_t.ship_2x23mm.LN[1].distanceMin = 10
+GT_t.WS_t.ship_2x23mm.LN[1].distanceMax = 2500 -- effective shooting
+GT_t.WS_t.ship_2x23mm.LN[1].max_trg_alt = 2000
+GT_t.WS_t.ship_2x23mm.LN[1].reactionTime = 3
+GT_t.WS_t.ship_2x23mm.LN[1].beamWidth = math.rad(1);
+GT_t.WS_t.ship_2x23mm.LN[1].sensor = {}
+set_recursive_metatable(GT_t.WS_t.ship_2x23mm.LN[1].sensor, GT_t.WSN_t[3])
+-- set_recursive_metatable(GT_t.WS_t.ship_2x23mm.LN[1].sensor, GT_t.WSN_t[10])
+GT_t.WS_t.ship_2x23mm.LN[1].PL = {}
+GT_t.WS_t.ship_2x23mm.LN[1].PL[1] = {}
+GT_t.WS_t.ship_2x23mm.LN[1].PL[1].ammo_capacity = 2000;
+GT_t.WS_t.ship_2x23mm.LN[1].PL[1].shell_name = {"2A7_23_HE"};
+GT_t.WS_t.ship_2x23mm.LN[1].PL[1].shell_display_name = "23mm HE";
+GT_t.WS_t.ship_2x23mm.LN[1].PL[1].shot_delay = 0.066666666666667
+GT_t.WS_t.ship_2x23mm.LN[1].PL[1].reload_time = 10;
+GT_t.WS_t.ship_2x23mm.LN[1].BR = 
+{ {
+	pos = { 2, 0, -0.1 }
+}, {
+	pos = { 2, 0, 0.1 }
+} }
+
 
 ws = GT_t.inc_ws();
 GT.WS[ws] = {};
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Bofors_40_Mk_12 );
-GT.WS[ws].area = 'Turret_B'; -- 'Bridge';
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_2x23mm );
+GT.WS[ws].area = 'Turret_B';
 GT.WS[ws].center = 'CENTER_TOWER_01';
 GT.WS[ws].drawArgument1 = 44;
 GT.WS[ws].drawArgument2 = 54;
@@ -188,18 +195,23 @@ GT.WS[ws].angles[1][3] = math.rad(-5);
 GT.WS[ws].angles[1][4] = math.rad(70);
 GT.WS[ws].reference_angle_Y = math.rad(0);  
 GT.WS[ws].LN[1].BR[1].recoilTime = 1.0;
+GT.WS[ws].LN[1].BR[2].recoilTime = 1.0;
 GT.WS[ws].LN[1].BR = 
 {
 	{
-		connector_name = 'POINT_Bofors_1_1',
+		connector_name = 'POINT_23mm_1_1',
+		recoilArgument = 150,
+	},
+	{
+		connector_name = 'POINT_23mm_1_2',
 		recoilArgument = 150,
 	}
 }
 
 ws = GT_t.inc_ws();
 GT.WS[ws] = {};
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Bofors_40_Mk_12 );
-GT.WS[ws].area = 'Turret_A'; -- 'Bridge';
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_2x23mm );
+GT.WS[ws].area = 'Turret_A';
 GT.WS[ws].center = 'CENTER_TOWER_02';
 GT.WS[ws].drawArgument1 = 44;
 GT.WS[ws].drawArgument2 = 54;
@@ -209,10 +221,15 @@ GT.WS[ws].angles[1][3] = math.rad(-5);
 GT.WS[ws].angles[1][4] = math.rad(70);
 GT.WS[ws].reference_angle_Y = math.rad(180);  
 GT.WS[ws].LN[1].BR[1].recoilTime = 1.0;
+GT.WS[ws].LN[1].BR[2].recoilTime = 1.0;
 GT.WS[ws].LN[1].BR = 
 {
 	{
-		connector_name = 'POINT_Bofors_1_1',
+		connector_name = 'POINT_23mm_2_1',
+		recoilArgument = 150,
+	},
+	{
+		connector_name = 'POINT_23mm_2_2',
 		recoilArgument = 150,
 	}
 }
