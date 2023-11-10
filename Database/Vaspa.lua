@@ -19,14 +19,14 @@ GT.race_velocity = 12.1 --M/S
 GT.economy_velocity = 7.7 --M/S 
 GT.economy_distance = 13,000 -- KM
 GT.race_distance = 2.778e+006
-GT.shipLength = 50; -- 225.20 -- o.a in meters
+GT.shipLength = 70; -- 225.20 -- o.a in meters
 GT.Width = 15; -- 43.90 --15 --meters
 GT.Height = 10; -- 35.226 --335.226 from sea level I think
-GT.Length = 50; -- 225.20 -- deck length I think
+GT.Length = 70; -- 225.20 -- deck length I think
 GT.DeckLevel = 3; -- 11.816 -- height of deck
-GT.X_nose = 20; -- 107.0 -- bow wave
-GT.X_tail = -30; -- -104.5 -- wake
-GT.Tail_Width = 4; -- 8 --wake width
+GT.X_nose = 31; -- 107.0 -- bow wave
+GT.X_tail = -39; -- -104.5 -- wake
+GT.Tail_Width = 12; -- 8 --wake width
 GT.Gamma_max = 0.35 -- no idea
 GT.Om = 0.05 --no idea
 GT.speedup = 0.2; -- 0.119249; --time it takes to accelerate
@@ -113,45 +113,24 @@ GT.radar1_period = 5; --speed
  ]]								
 --Damage Model
 GT.DM = {
-    { area_name = "NOSE_R_01", 				area_arg = 70, area_life = 150, area_fire = { connector = "FIRE_NOSE_R_01", size = 0.5}},
-	{ area_name = "NOSE_R_02", 				area_arg = 94, area_life = 150, area_fire = { connector = "FIRE_NOSE_R_02", size = 0.5}},
-	{ area_name = "CENTER_R_01", 			area_arg = 71, area_life = 150, area_fire = { connector = "FIRE_CENTER_R_01", size = 0.5}},
-	{ area_name = "CENTER_R_02", 			area_arg = 96, area_life = 150, area_fire = { connector = "FIRE_CENTER_R_02", size = 0.5}},
-    { area_name = "BACK_R", 				area_arg = 72, area_life = 300, area_fire = { connector = "FIRE_BACK_R", size = 0.5}},
+	----- Hull.
+		{ area_name = "Hull_Bow_Port",			area_arg = 72,	area_life = 70, area_fire = { pos = {29.96, 3.0, 3.7}, size = 1.5}},
+		{ area_name = "Hull_Bow_Stbd", 			area_arg = 73,	area_life = 70, area_fire = { pos = {32.0, 3.0,-3.3}, size = 1.5}},
+		{ area_name = "Hull_Stern_Port", 		area_arg = 74,	area_life = 60, area_fire = { pos = {-35.772, 0.3, 5.8}, size = 1.5}},
+		{ area_name = "Hull_Stern_Stbd", 		area_arg = 75,	area_life = 60, area_fire = { pos = {-43.008, 0.3, -5.8}, size = 1.5}},
+		{ area_name = "Hull_Deck_Forward", 		area_arg = 76,	area_life = 60, area_fire = { pos = {43.684, 5.0, 3.0}, size = 1.5}},
+		 { area_name = "Hull_Stern_Transom", 	area_arg = 77,	area_life = 60, area_fire = { pos = {-57.0, 2.6, 0.0}, size = 1.5}},
+	-------- Superstructure	
+		{ area_name = "Rear-Superstructure",	area_arg = 82,	area_life = 80, area_fire = { pos = {-35.0, 4.0, 0.0}, size = 1.5}},
+		{ area_name = "Bridge",					area_arg = 83,	area_life = 80, area_fire = { pos = {12.6, 5.0, 0.0}, size = 1.5}},
+	-------- 3x 4.5in Turrets	
+		{ area_name = "Turret_A",				area_arg = 96,	area_life = 60, area_fire = { pos = {34.4, 6.6, 0.0}, size =  1.5}},
+		{ area_name = "Turret_B",				area_arg = 97,	area_life = 60, area_fire = { pos = {24.2, 8.4, 0.0}, size =  1.5}},
+		{ area_name = "Turret_Y",				area_arg = 98,	area_life = 60, area_fire = { pos = {-36.8, 6.2, 0.0}, size =  1.5}},
+	---- Sink	
+		{ area_name = "Vaspa_Destroyed",		area_arg = 77,	area_life = 60, area_fire = { pos = {-2.1, 2, 0.0}, size = 3}},
 	
-    { area_name = "NOSE_L_01", 				area_arg = 73, area_life = 150, area_fire = { connector = "FIRE_NOSE_L_01", size = 0.5}},
-	{ area_name = "NOSE_L_02", 				area_arg = 95, area_life = 150, area_fire = { connector = "FIRE_NOSE_L_02", size = 0.5}},
-    { area_name = "CENTER_L_01", 			area_arg = 74, area_life = 150, area_fire = { connector = "FIRE_CENTER_L_01", size = 0.5}},
-	{ area_name = "CENTER_L_02", 			area_arg = 97, area_life = 150, area_fire = { connector = "FIRE_CENTER_L_02", size = 0.5}},
-	{ area_name = "CENTER_L_03", 			area_arg = 98, area_life = 150},
-    { area_name = "BACK_L", 				area_arg = 75, area_life = 300, area_fire = { connector = "FIRE_BACK_L", size = 0.5}},
-	
-	{ area_name = "PALUBA_NOSE",			area_arg = 76, area_life = 100, area_fire = { connector = "FIRE_PALUBA_NOSE", size = 0.8}},
-	{ area_name = "PALUBA_MIDLE_01",		area_arg = 77, area_life = 100, area_fire = { connector = "FIRE_PALUBA_MIDLE_01", size = 0.8}},
-	{ area_name = "PALUBA_MIDLE_02",		area_arg = 92, area_life = 100, area_fire = { connector = "FIRE_PALUBA_MIDLE_02", size = 0.8}},
-	{ area_name = "PALUBA_BACK_01", 		area_arg = 78, area_life = 100, area_fire = { connector = "FIRE_PALUBA_BACK_01", size = 0.8}},
-	{ area_name = "PALUBA_BACK_02", 		area_arg = 93, area_life = 100, area_fire = { connector = "FIRE_PALUBA_BACK_02", size = 0.8}},
-	
-	{ area_name = "BACK", 					area_arg = 79, area_life = 100},
-	{ area_name = "RUBKA",					area_arg = 80, area_life = 100, area_fire = { connector = "FIRE_RUBKA", size = 0.8}},
-	{ area_name = "MACHTA",					area_arg = 81, area_life = 100},
-	{ area_name = "TOWER",					area_arg = 82, area_life = 100},
-
-	{ area_name = "ZA_NR",					area_arg = 99, area_life = 30},
-	{ area_name = "ZA_BR",					area_arg = 100, area_life = 30},
-	{ area_name = "ZA_BL",					area_arg = 101, area_life = 30},
-	{ area_name = "NADSTROYKA_BR",			area_arg = 102, area_life = 30},
-	{ area_name = "NADSTROYKA_BL",			area_arg = 103, area_life = 30},
-	{ area_name = "ZRK_BR",					area_arg = 104, area_life = 30},
-	{ area_name = "ZRK_NR",					area_arg = 105, area_life = 30},
-	
-	
-	{ area_name = "LIFT_01",				area_arg = 109, area_life = 50},
-	{ area_name = "LIFT_02",				area_arg = 110, area_life = 50},
-	{ area_name = "LIFT_03",				area_arg = 111, area_life = 50},
-	{ area_name = "LIFT_04",				area_arg = 112, area_life = 50},
-}
-
+	}
 --GT.WS[ws].pointer = "BRIDGE" --possible CA or Weapon controls??
 --GT.driverViewConnectorName = {"DRIVER_POINT", offset = {0.0, 0.0, 0.0}} --possible CA or weapon controls??
 --GT.driverCockpit = "DriverCockpit/DriverCockpitWithIR" --possible CA or weapon controls??
@@ -167,6 +146,76 @@ GT.WS.searchRadarMaxElevation = math.rad(60);
 local ws;
 
 -- weapon systems goes here
+GT_t.WS_t.ship_Bofors_40_Mk_12 = {name = "40 mm Bofors Mk 12"};
+GT_t.WS_t.ship_Bofors_40_Mk_12.angles = {
+                    {math.rad(180), math.rad(-180), math.rad(-5), math.rad(90)},
+                    };
+GT_t.WS_t.ship_Bofors_40_Mk_12.omegaY = math.rad(115) -- Block 1B
+GT_t.WS_t.ship_Bofors_40_Mk_12.omegaZ = math.rad(116) -- Block 1B
+GT_t.WS_t.ship_Bofors_40_Mk_12.pidY = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_Bofors_40_Mk_12.pidZ = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_Bofors_40_Mk_12.reference_angle_Z = 0
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN = {}
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1] = {}
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].type = 3
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].distanceMin = 10
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].distanceMax = 7160 -- effective shooting
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].max_trg_alt = 3800
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].reactionTime = 1.8
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].beamWidth = math.rad(1);
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].sensor = {}
+-- set_recursive_metatable(GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].sensor, GT_t.WSN_t[3])
+set_recursive_metatable(GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].sensor, GT_t.WSN_t[10])
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL = {}
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1] = {}
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].ammo_capacity = 560;
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].shell_name = {"Bofors_40_Mk12_HE"};
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].shell_display_name = "40mm HE";
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].shot_delay = 60/120 -- 120 rpm
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].PL[1].reload_time = 1000000; -- never during the mission (ship autogun)
+GT_t.WS_t.ship_Bofors_40_Mk_12.LN[1].BR = { {pos = {3.478, 0, 0} }, }
+
+ws = GT_t.inc_ws();
+GT.WS[ws] = {};
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Bofors_40_Mk_12 );
+GT.WS[ws].area = 'Turret_B'; -- 'Bridge';
+GT.WS[ws].center = 'CENTER_TOWER_01';
+GT.WS[ws].drawArgument1 = 44;
+GT.WS[ws].drawArgument2 = 54;
+GT.WS[ws].angles[1][1] = math.rad(170);
+GT.WS[ws].angles[1][2] = math.rad(-170);
+GT.WS[ws].angles[1][3] = math.rad(-5);
+GT.WS[ws].angles[1][4] = math.rad(70);
+GT.WS[ws].reference_angle_Y = math.rad(0);  
+GT.WS[ws].LN[1].BR[1].recoilTime = 1.0;
+GT.WS[ws].LN[1].BR = 
+{
+	{
+		connector_name = 'POINT_Bofors_1_1',
+		recoilArgument = 150,
+	}
+}
+
+ws = GT_t.inc_ws();
+GT.WS[ws] = {};
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Bofors_40_Mk_12 );
+GT.WS[ws].area = 'Turret_A'; -- 'Bridge';
+GT.WS[ws].center = 'CENTER_TOWER_02';
+GT.WS[ws].drawArgument1 = 44;
+GT.WS[ws].drawArgument2 = 54;
+GT.WS[ws].angles[1][1] = math.rad(170);
+GT.WS[ws].angles[1][2] = math.rad(-170);
+GT.WS[ws].angles[1][3] = math.rad(-5);
+GT.WS[ws].angles[1][4] = math.rad(70);
+GT.WS[ws].reference_angle_Y = math.rad(180);  
+GT.WS[ws].LN[1].BR[1].recoilTime = 1.0;
+GT.WS[ws].LN[1].BR = 
+{
+	{
+		connector_name = 'POINT_Bofors_1_1',
+		recoilArgument = 150,
+	}
+}
 
 -------------------------------------------------------------------------
 
@@ -175,15 +224,20 @@ GT.DisplayName = _("Vaspa Torpedoboat") -- name in game in ME and on the tape at
 GT.DisplayNameShort = _("Vaspa") -- Label name
 GT.Rate = 5500.000000 
 
-GT.Sensors = {  OPTIC = {"long-range naval optics", "long-range naval LLTV", "long-range naval FLIR"}, --optics types
+--[[ GT.Sensors = {  OPTIC = {"long-range naval optics", "long-range naval LLTV", "long-range naval FLIR"}, --optics types
                 RADAR = {"Tor 9A331", "carrier search radar"}, --radar types
             };
-
+ ]]
+GT.Sensors = {  OPTIC = {"long-range naval optics", "long-range naval LLTV", "long-range naval FLIR",},
+			RADAR = {
+				"ticonderoga search radar",
+			}
+		};			
  ----------------------------------------------------
 GT.DetectionRange	= GT.airFindDist;
 GT.ThreatRange		= GT.airWeaponDist;
 GT.Singleton		= "yes";
-GT.mapclasskey		= "P0091000065"; --map icon >>MissionEditor\data\NewMap\images
+GT.mapclasskey		= "P0091000039"; --map icon >>MissionEditor\data\NewMap\images
 --[[ GT.attribute		= {wsType_Navy, wsType_Ship, wsType_AirCarrier, WSTYPE_PLACEHOLDER, -- >> \DCS World Version\Scripts\Database\wsTypes.lua
 						"Aircraft Carriers", 
 						"Arresting Gear",  --if it has arrester wires
@@ -215,7 +269,6 @@ GT.Categories = {
 -- categories in the mission editor 
 GT.tags  = 
 {
-	--"Torpedoboat", -- don't need this as it is not a valid tag -- edited by Joey45
 	"Fast Attack Craft"
 };
 --[[ 
