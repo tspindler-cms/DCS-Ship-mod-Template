@@ -215,7 +215,7 @@ GT.Categories = {
 -- categories in the mission editor 
 GT.tags  = 
 {
-	"Torpedoboat",
+	--"Torpedoboat", -- don't need this as it is not a valid tag -- edited by Joey45
 	"Fast Attack Craft"
 };
 --[[ 
