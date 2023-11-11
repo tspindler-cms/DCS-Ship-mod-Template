@@ -37,7 +37,7 @@ GT.R_min = 80 -- 665.8 -- turn radius
 GT.RCS = 100 -- 100000 -- new in 2.7 ----estimated RCS in square meters
 GT.IR_emission_coeff = 0.05 -- 0.9 -- new in 2.7 not sure the params
 
-GT.sensor.height = 1.8
+-- GT.sensor.height = 1.8
 
 GT.TACAN		   = false -- true;		--If it has TACAN say true if not say false or not have this entry
 -- GT.TACAN_position = {7.006,  43.155,  -14.1} --position of tacan TX	
@@ -64,19 +64,6 @@ GT.numParking = 0 -- 2 -- runways
 GT.Plane_Num_ = 0 -- 12 --number of planes, not sure if it matters in game
 GT.Helicopter_Num_ = 0 -- 8 -- Number heli spawns
 
--- the new LOS stuff is still new to me but this is what I have found out by looking through the lua files
-
---LSO view          high quality edm file, whatever you named the connector , Visiblity arg   , Position of camera
---[[ local LSO_Station = { HQ_model = "empty", dockConnector  = "LSO_VIEW" , hide_argument = 821 , cameraPos = {-110+1,19.8,-18+0.5,180}} --this camera pos works
-
-GT.Stations = 	{	LSO = LSO_Station, }
-
-GT.LSOView = {cockpit = "empty", position = {--[[connector = "LSO_VIEW", ]]offset = {0.0, 0.0, 0.0, 0.0, 0.0}}} --this offset has no effect but the line needs to be here
-
-
--- Landing point
-GT.Landing_Point	= {101.926,   11.812,   -12.378} -- y z x You need this otherwise the aircraft will not load on the deck
- ]]
 -- smoke density and position
 -- insecure what to do with this
 

@@ -1,7 +1,7 @@
 declare_plugin("tetet_p4",
 {
 dirName		  = current_mod_path,
-displayName   = _("p4 Torpedo Boat),
+displayName   = _("p4 Torpedo Boat"),
 shortName	  =   "p4",
 version		  =   "2.9.0",
 state		  =   "installed",
@@ -12,8 +12,8 @@ encyclopedia_path = current_mod_path .. '/Encyclopedia',
 Skins = 
 {
 	 {     
-	     name  = "p4", 
-		 dir   = "Skins/1" 
+	     	name  = "p4", 
+	 	dir   = "Skins/1" 
 	 },
 },
 
