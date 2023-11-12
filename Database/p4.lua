@@ -1,5 +1,5 @@
 -- Ship template by Joey45 edit as you see fit 
--- Name of ship and who by
+-- p4 torpedo boat by TeTeT
 
 GT = {};
 -- dofile(current_mod_path..'/scripts/ShipnameRunwaysAndRoutes.lua') -- the runways and taxiway lua file
@@ -36,8 +36,6 @@ GT.R_min = 80 -- 665.8 -- turn radius
 
 GT.RCS = 100 -- 100000 -- new in 2.7 ----estimated RCS in square meters
 GT.IR_emission_coeff = 0.05 -- 0.9 -- new in 2.7 not sure the params
-
--- GT.sensor.height = 1.8
 
 GT.TACAN		   = false -- true;		--If it has TACAN say true if not say false or not have this entry
 -- GT.TACAN_position = {7.006,  43.155,  -14.1} --position of tacan TX	
@@ -155,7 +153,7 @@ GT.airFindDist = 3000 -- 28000 -- Max detection range air threats (meters)
 
 --Radar info
 GT.WS = {}
-GT.WS.maxTargetDetectionRange = 3000 - 25000; --450000
+GT.WS.maxTargetDetectionRange = 3000 -- 25000; --450000
 GT.WS.radar_type = 104 --104= Short range, 103 = Mid range at a guess 102 = Long range
 GT.WS.searchRadarMaxElevation = math.rad(60);
 local ws;
@@ -164,7 +162,7 @@ local ws;
 
 -------------------------------------------------------------------------
 
-GT.Name = "tetete_p4" -- folder name for Liveries
+GT.Name = "tetet_p4" -- folder name for Liveries
 GT.DisplayName = _("p4 Torpedo Boat") -- name in game in ME and on the tape at the bottom
 GT.DisplayNameShort = _("p4") -- Label name
 GT.Rate = 20 -- 5500.000000 
@@ -173,6 +171,9 @@ GT.Rate = 20 -- 5500.000000
 GT.Sensors = {  OPTIC = {"long-range naval optics", "long-range naval LLTV", "long-range naval FLIR"}, --optics types
                 RADAR = {"Tor 9A331", "carrier search radar"}, --radar types
             };
+GT.sensor = {
+	height = 1.8
+};
 
  ----------------------------------------------------
 GT.DetectionRange	= GT.airFindDist;
@@ -254,4 +255,4 @@ attributes
 
 --]]	
 
-add_surface_unit(GT)
+-- add_surface_unit(GT)
