@@ -200,8 +200,8 @@ GT.WS[ws].area = 'BOAT'
 GT.WS[ws].center = 'CENTER_TURRET_01'
 GT.WS[ws].drawArgument1 = 0
 GT.WS[ws].drawArgument2 = 1
-GT.WS[ws].reference_angle_Z = math.rad(5)
-GT.WS[ws].reference_angle_Y = math.rad(180) -- facing rearward
+-- GT.WS[ws].reference_angle_Z = math.rad(0) -- same as in line 171?
+GT.WS[ws].reference_angle_Y = math.rad(0)
 GT.WS[ws].angles = {
                     {math.rad(170), math.rad(-170), math.rad(-5), math.rad(85)},
 --                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
