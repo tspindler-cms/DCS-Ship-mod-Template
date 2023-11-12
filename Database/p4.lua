@@ -105,6 +105,7 @@ GT.radar1_period = 5; --speed ]]
 								
 --Damage Model
 GT.DM = {
+	{ area_name = "BOAT", 				area_arg = 70, area_life = 100 }
  --[[    { area_name = "NOSE_R_01", 				area_arg = 70, area_life = 150, area_fire = { connector = "FIRE_NOSE_R_01", size = 0.5}},
 	{ area_name = "NOSE_R_02", 				area_arg = 94, area_life = 150, area_fire = { connector = "FIRE_NOSE_R_02", size = 0.5}},
 	{ area_name = "CENTER_R_01", 			area_arg = 71, area_life = 150, area_fire = { connector = "FIRE_CENTER_R_01", size = 0.5}},
@@ -159,6 +160,64 @@ GT.WS.searchRadarMaxElevation = math.rad(60);
 local ws;
 
 -- weapon systems goes here
+GT_t.WS_t.ship_dshk_2x12mm = {name = "2x12.7mm DShK"};
+GT_t.WS_t.ship_dshk_2x12mm.angles = {
+                    {math.rad(180), math.rad(-180), math.rad(-5), math.rad(90)},
+                    };
+GT_t.WS_t.ship_dshk_2x12mm.omegaY = math.rad(115) -- Block 1B
+GT_t.WS_t.ship_dshk_2x12mm.omegaZ = math.rad(116) -- Block 1B
+GT_t.WS_t.ship_dshk_2x12mm.pidY = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_dshk_2x12mm.pidZ = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_dshk_2x12mm.reference_angle_Z = 0
+GT_t.WS_t.ship_dshk_2x12mm.LN = {}
+GT_t.WS_t.ship_dshk_2x12mm.LN[1] = {}
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].type = 3
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].distanceMin = 10
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].distanceMax = 1200 -- effective shooting
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].max_trg_alt = 500
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].reactionTime = 3
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].beamWidth = math.rad(1);
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].sensor = {}
+set_recursive_metatable(GT_t.WS_t.ship_dshk_2x12mm.LN[1].sensor, GT_t.WSN_t[3])
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].PL = {}
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].PL[1] = {}
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].PL[1].ammo_capacity = 2000;
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].PL[1].shell_name = {"Utes_12_7x108_T", "Utes_12_7x108", "Utes_12_7x108", "Utes_12_7x108", "Utes_12_7x108"};
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].PL[1].shell_display_name = "12.7mm";
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].PL[1].shot_delay = 0.08;
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].PL[1].reload_time = 15;
+GT_t.WS_t.ship_dshk_2x12mm.LN[1].BR = 
+{ {
+	pos = { 2, 0, -0.1 }
+}, {
+	pos = { 2, 0, 0.1 }
+} }
+
+ws = GT_t.inc_ws();
+GT.WS[ws] = {}
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_dshk_2x12mm)
+GT.WS[ws].area = 'BOAT'
+GT.WS[ws].center = 'CENTER_TURRET_01'
+GT.WS[ws].drawArgument1 = 0
+GT.WS[ws].drawArgument2 = 1
+GT.WS[ws].reference_angle_Z = math.rad(5)
+GT.WS[ws].reference_angle_Y = math.rad(180) -- facing rearward
+GT.WS[ws].angles = {
+                    {math.rad(170), math.rad(-170), math.rad(-5), math.rad(85)},
+--                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
+--                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
+                    };
+GT.WS[ws].LN[1].BR = 
+					{
+						{
+							connector_name = 'POINT_12_7mm_1_gone',
+					--		recoilArgument = 150,
+						},
+						{
+							connector_name = 'POINT_12_7mm_2_gone',
+					--		recoilArgument = 150,
+						}
+					};
 
 -------------------------------------------------------------------------
 
