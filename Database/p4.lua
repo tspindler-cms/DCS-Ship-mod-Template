@@ -219,16 +219,25 @@ GT.WS[ws].LN[1].BR =
 						}
 					};
 
+ws = GT_t.inc_ws();
+GT.WS[ws] = {};
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Torpedo84 );
+GT.WS[ws].reference_angle_Z = math.rad(5);
+GT.WS[ws].LN[1].BR = {
+	{connector_name = 'TPO_01', recoilArgument = 177, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
+	{connector_name = 'TPO_02', recoilArgument = 178, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
+};
+
 -------------------------------------------------------------------------
 
 GT.Name = "tetet_p4" -- folder name for Liveries
 GT.DisplayName = _("p4 Torpedo Boat") -- name in game in ME and on the tape at the bottom
 GT.DisplayNameShort = _("p4") -- Label name
-GT.Rate = 20 -- 5500.000000 
+GT.Rate = 4000 -- 5500.000000 
 
 -- most likely not correct
 GT.Sensors = {  OPTIC = {"long-range naval optics", "long-range naval LLTV", "long-range naval FLIR"}, --optics types
-                RADAR = {"Tor 9A331", "carrier search radar"}, --radar types
+                RADAR = {"ticonderoga search radar"}, --radar types
             };
 GT.sensor = {
 	height = 1.8
