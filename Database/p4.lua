@@ -1,5 +1,5 @@
 -- Ship template by Joey45 edit as you see fit 
--- p4 torpedo boat by TeTeT
+-- P 4 torpedo boat by TeTeT
 
 GT = {};
 -- dofile(current_mod_path..'/scripts/ShipnameRunwaysAndRoutes.lua') -- the runways and taxiway lua file
@@ -31,8 +31,8 @@ GT.X_tail = -9 -- -104.5 -- wake
 GT.Tail_Width = 2 -- 8 --wake width
 GT.Gamma_max = 0.35 -- no idea
 GT.Om = 5 -- 0.05 --no idea
-GT.speedup = 0.3 -- 0.119249; --time it takes to accelerate
-GT.R_min = 80 -- 665.8 -- turn radius
+GT.speedup = 0.08 -- 0.119249; --time it takes to accelerate
+GT.R_min = 100 -- 665.8 -- turn radius
 
 GT.RCS = 100 -- 100000 -- new in 2.7 ----estimated RCS in square meters
 GT.IR_emission_coeff = 0.05 -- 0.9 -- new in 2.7 not sure the params
@@ -55,7 +55,7 @@ GlideslopeBasicAngle = 3.5,
 VerticalCoverageAngle = 1.7
 }
  ]]
-GT.distFindObstacles = 50 -- 10000
+GT.distFindObstacles = 350 -- 10000
 
 
 GT.numParking = 0 -- 2 -- runways
@@ -230,9 +230,9 @@ GT.WS[ws].LN[1].BR = {
 
 -------------------------------------------------------------------------
 
-GT.Name = "tetet_p4" -- folder name for Liveries
-GT.DisplayName = _("p4 Torpedo Boat") -- name in game in ME and on the tape at the bottom
-GT.DisplayNameShort = _("p4") -- Label name
+GT.Name = "P4" -- folder name for Liveries
+GT.DisplayName = _("P 4 Torpedo Boat") -- name in game in ME and on the tape at the bottom
+GT.DisplayNameShort = _("P 4") -- Label name
 GT.Rate = 4000 -- 5500.000000 
 
 -- most likely not correct
