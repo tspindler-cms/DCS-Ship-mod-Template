@@ -227,6 +227,7 @@ GT.WS[ws].LN[1].BR = {
 	{connector_name = 'TPO_01', recoilArgument = 177, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
 	{connector_name = 'TPO_02', recoilArgument = 178, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
 };
+GT.WS[ws].LN[1].show_external_missile = false
 
 -------------------------------------------------------------------------
 
