@@ -201,20 +201,20 @@ GT.WS[ws].center = 'CENTER_TURRET_01'
 GT.WS[ws].drawArgument1 = 0
 GT.WS[ws].drawArgument2 = 1
 -- GT.WS[ws].reference_angle_Z = math.rad(0) -- same as in line 171?
-GT.WS[ws].reference_angle_Y = math.rad(0)
+GT.WS[ws].reference_angle_Y = math.rad(180)
 GT.WS[ws].angles = {
-                    {math.rad(170), math.rad(-170), math.rad(-5), math.rad(85)},
+                    {math.rad(180), math.rad(-180), math.rad(-5), math.rad(85)},
 --                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
 --                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
                     };
 GT.WS[ws].LN[1].BR = 
 					{
 						{
-							connector_name = 'POINT_12_7mm_1_gone',
+							connector_name = 'POINT_12_7mm_1',
 					--		recoilArgument = 150,
 						},
 						{
-							connector_name = 'POINT_12_7mm_2_gone',
+							connector_name = 'POINT_12_7mm_2',
 					--		recoilArgument = 150,
 						}
 					};
