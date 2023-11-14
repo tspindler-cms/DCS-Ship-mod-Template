@@ -70,6 +70,9 @@ GT.Helicopter_Num_ = 0 -- 8 -- Number heli spawns
 } ]]
       --[2] = { size = 1.0 , pos = {-1.9, 29.0, 14.0 } },	--if you have 2 stacks then enable this	
 
+GT.animation_arguments = {
+	water_propeller = 2,
+}
 
 --[[ GT.animation_arguments.catapult_shuttles = {145, 146, 147, 148} --shuttle args
 GT.animation_arguments.arresting_wires = {141, 142, 143, 144} -- can't get the visibilty anim to work, differnt #arg numbers on the Stennis and SC
