@@ -1,0 +1,6 @@
+model = {
+	lods = {		
+		{"maddox_dcs.edm",15500.000000}; 
+	};
+	collision_shell = "maddox_dcs.edm";
+}
