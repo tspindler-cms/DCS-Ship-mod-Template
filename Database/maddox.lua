@@ -83,6 +83,113 @@ GT.WS.searchRadarMaxElevation = math.rad(60);
 local ws;
 
 -- weapon systems goes here
+-- we will use the https://en.wikipedia.org/wiki/5-inch/38-caliber_gun as main armament
+-- dcs-lua-datamine _G["db"]["Units"]["GT_t"]["LN_t"]["Mk12_5in38cal"] 
+
+GT_t.WS_t.ship_mk12_2x127mm = {name = "Mk12 5inch 38cal Twin"};
+GT_t.WS_t.ship_mk12_2x127mm.angles = {
+                    {math.rad(180), math.rad(-180), math.rad(-5), math.rad(90)},
+                    };
+GT_t.WS_t.ship_mk12_2x127mm.omegaY = math.rad(115) -- Block 1B
+GT_t.WS_t.ship_mk12_2x127mm.omegaZ = math.rad(116) -- Block 1B
+GT_t.WS_t.ship_mk12_2x127mm.pidY = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_mk12_2x127mm.pidZ = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_mk12_2x127mm.reference_angle_Z = 0
+GT_t.WS_t.ship_mk12_2x127mm.LN = {}
+GT_t.WS_t.ship_mk12_2x127mm.LN[1] = {}
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].type = 11
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].distanceMin = 10
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].distanceMax = 16000 -- effective shooting
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].max_trg_alt = 11300
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].reactionTime = 3
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].beamWidth = math.rad(1);
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].sensor = {}
+set_recursive_metatable(GT_t.WS_t.ship_mk12_2x127mm.LN[1].sensor, GT_t.WSN_t[11])
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].PL = {}
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].PL[1] = {}
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].PL[1].ammo_capacity = 200;
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].PL[1].shell_name = { "Mk_12_HE_shell" };
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].PL[1].shell_display_name = "127mm";
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].PL[1].shot_delay = 3;
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].PL[1].reload_time = 15000000; -- never
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].BR =
+{ {
+    pos = { 5.2, 0, -0.1 }
+}, {
+    pos = { 5.2, 0, 0.1 }
+} }
+
+ws = GT_t.inc_ws();
+GT.WS[ws] = {}
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_mk12_2x127mm)
+GT.WS[ws].area = 'Ship'
+GT.WS[ws].center = 'CENTER_TURRET_01'
+GT.WS[ws].drawArgument1 = 0
+GT.WS[ws].drawArgument2 = 1
+GT.WS[ws].reference_angle_Y = math.rad(0)
+GT.WS[ws].angles = {
+                    {math.rad(140), math.rad(-140), math.rad(-5), math.rad(75)},
+--                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
+--                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
+                    };
+GT.WS[ws].LN[1].BR = 
+					{
+						{
+							connector_name = 'POINT_127mm_1',
+						},
+						{
+							connector_name = 'POINT_127mm_2',
+						}
+					};
+
+ws = GT_t.inc_ws();
+GT.WS[ws] = {}
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_mk12_2x127mm)
+GT.WS[ws].area = 'Ship'
+GT.WS[ws].center = 'CENTER_TURRET_02'
+GT.WS[ws].drawArgument1 = 2
+GT.WS[ws].drawArgument2 = 3
+GT.WS[ws].reference_angle_Y = math.rad(0)
+GT.WS[ws].angles = {
+                    {math.rad(140), math.rad(-140), math.rad(-5), math.rad(75)},
+--                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
+--                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
+                    };
+GT.WS[ws].LN[1].BR = 
+					{
+						{
+							connector_name = 'POINT_127mm_2_1',
+						},
+						{
+							connector_name = 'POINT_127mm_2_2',
+						}
+					};
+
+ws = GT_t.inc_ws();
+GT.WS[ws] = {}
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_mk12_2x127mm)
+GT.WS[ws].area = 'Ship'
+GT.WS[ws].center = 'CENTER_TURRET_03'
+GT.WS[ws].drawArgument1 = 4
+GT.WS[ws].drawArgument2 = 5
+GT.WS[ws].reference_angle_Y = math.rad(180)
+GT.WS[ws].angles = {
+                    {math.rad(140), math.rad(-140), math.rad(-5), math.rad(75)},
+--                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
+--                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
+                    };
+GT.WS[ws].LN[1].BR = 
+					{
+						{
+							connector_name = 'POINT_127mm_3_1',
+						},
+						{
+							connector_name = 'POINT_127mm_3_2',
+						}
+					};
+
+
+
 
 -------------------------------------------------------------------------
 
