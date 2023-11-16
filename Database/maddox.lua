@@ -52,20 +52,27 @@ GT.Helicopter_Num_ = 0 -- Number heli spawns
 
 -- smoke density and position
 GT.exhaust = {
+	[1] = { size = 1.0 , pos = {0, 0, 0} },
 }
       --[2] = { size = 1.0 , pos = {-1.9, 29.0, 14.0 } },	--if you have 2 stacks then enable this	
 
 
-GT.animation_arguments.radar1_rotation = 1; -- Radar 1 Rotation main radar
-GT.radar1_period = 1; --speed
+--GT.animation_arguments.radar1_rotation = 7; -- Radar 1 Rotation main radar
+--GT.radar1_period = 5; --speed
 
-GT.animation_arguments.radar2_rotation = 2; -- Radar 2 Rotation secondary radars
+--GT.animation_arguments.radar2_rotation = 2; -- Radar 2 Rotation secondary radars
+--GT.radar1_period = 5; --speed
+
+--GT.animation_arguments.radar3_rotation = 3; -- navigation radar
+--GT.radar1_period = 5; --speed
+
+GT.animation_arguments = {
+	water_propeller = 6,
+	radar1_rotation = 7
+}
 GT.radar1_period = 5; --speed
 
-GT.animation_arguments.radar3_rotation = 3; -- navigation radar
-GT.radar1_period = 5; --speed
 
-								
 --Damage Model
 GT.DM = {
     { area_name = "Ship", 				area_arg = 70, area_life = 150 },
@@ -193,10 +200,12 @@ GT.WS[ws] = {};
 set_recursive_metatable( GT.WS[ws], GT_t.WS_t.ship_Torpedo84 );
 GT.WS[ws].reference_angle_Z = math.rad(5);
 GT.WS[ws].LN[1].BR = {
-	{connector_name = 'TPO_01', recoilArgument = 177, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
-	{connector_name = 'TPO_02', recoilArgument = 178, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
+	{connector_name = 'TPO_01_gone', recoilArgument = 177, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
+	{connector_name = 'TPO_02_gone', recoilArgument = 178, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
+	{connector_name = 'TPO_03_gone', recoilArgument = 177, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
+	{connector_name = 'TPO_04_gone', recoilArgument = 178, recoilT0 = -1, recoilT1 = -0.5, recoilT2 = 0.5, recoilTime = 1.0},
 };
-GT.WS[ws].LN[1].show_external_missile = false
+GT.WS[ws].LN[1].show_external_missile = true
 
 
 -------------------------------------------------------------------------
