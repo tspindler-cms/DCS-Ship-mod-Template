@@ -52,9 +52,11 @@ GT.Helicopter_Num_ = 0 -- Number heli spawns
 
 -- smoke density and position
 GT.exhaust = {
-	[1] = { size = 1.0 , pos = {0, 0, 0} },
+	[1] = { size = 0.60, pos = {6.65, 14, -0.27}},
+	[2] = { size = 0.60, pos = {-7.34, 13, -0.27}}
+	-- [1] = { size = 0.60 , pos = {-8.0, 17.0, 2.914 } },
+	-- [2] = { size = 0.60 , pos = {-8.0, 17.0, -3.158 } },
 }
-      --[2] = { size = 1.0 , pos = {-1.9, 29.0, 14.0 } },	--if you have 2 stacks then enable this	
 
 
 --GT.animation_arguments.radar1_rotation = 7; -- Radar 1 Rotation main radar
@@ -72,7 +74,7 @@ GT.animation_arguments = {
 	radar2_rotation = 8
 }
 GT.radar1_period = 5; --speed
-GT.radar2_period = 60; 
+GT.radar2_period = 180; 
 
 --Damage Model
 GT.DM = {
