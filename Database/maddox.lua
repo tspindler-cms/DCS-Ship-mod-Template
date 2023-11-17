@@ -68,10 +68,11 @@ GT.exhaust = {
 
 GT.animation_arguments = {
 	water_propeller = 6,
-	radar1_rotation = 7
+	radar1_rotation = 7,
+	radar2_rotation = 8
 }
 GT.radar1_period = 5; --speed
-
+GT.radar2_period = 60; 
 
 --Damage Model
 GT.DM = {
