@@ -284,7 +284,7 @@ GT.Categories		= {
 					};	 ]]
 					GT.attribute = {wsType_Navy,wsType_Ship,wsType_ArmedShip,wsType_GenericLightArmoredShip,
 						"low_reflection_vessel", 
-						"Light armed ships", 
+						-- "Light armed ships", 
 						"NO_SAM", "Armed Ship"
 					};
  	
