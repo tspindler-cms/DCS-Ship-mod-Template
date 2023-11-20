@@ -57,7 +57,6 @@ GT.radar2_period = 180;
 
 --Damage Model
 GT.DM = {
-    { area_name = "Ship", area_arg = 70, area_life = 150 },
 	{ area_name = "TurretFront", area_arg = 71, area_life = 200},
 	{ area_name = "TurretRear", area_arg = 72, area_life = 100},
 	{ area_name = "HullFront", area_arg = 73, area_life = 500},
