@@ -39,7 +39,7 @@ GT.TACAN = false;		--If it has TACAN say true if not say false or not have this 
 
 GT.ICLS = false; -- IF it has ICLS say true if not say false or not have this entry
 
-GT.distFindObstacles = 10000
+GT.distFindObstacles = 148.7
 
 -- smoke density and position
 GT.exhaust = {
@@ -64,19 +64,19 @@ GT.DM = {
 }
 
 
-GT.airWeaponDist = 58000  -- Max engagement range air threats (meters)
-GT.airFindDist = 58000 -- Max detenction range air threats (meters)
+GT.airWeaponDist = 18650.0  -- Max engagement range air threats (meters)
+GT.airFindDist = 45000 -- Max detenction range air threats (meters)
 
 --Radar info
 GT.WS = {};
-GT.WS.maxTargetDetectionRange = 450000;
+GT.WS.maxTargetDetectionRange = GT.airFindDist+10000;
 GT.WS.radar_type = 102;
 GT.WS.searchRadarMaxElevation = math.rad(90);
 GT.WS.searchRadarFrequencies = {{50.0e6, 54.0e6}, {2.0e9, 2.2e9}};
 
 --Test Optical 
 GT.WS = {}
-GT.WS.maxTargetDetectionRange = 25000;
+GT.WS.maxTargetDetectionRange = 45000;
 GT.WS.radar_type = 109 --optical in wstypes
 GT.WS.searchRadarMaxElevation = math.rad(90);
 local ws;
@@ -98,7 +98,7 @@ GT_t.WS_t.ship_mk12_2x127mm.LN = {}
 GT_t.WS_t.ship_mk12_2x127mm.LN[1] = {}
 GT_t.WS_t.ship_mk12_2x127mm.LN[1].type = 12
 GT_t.WS_t.ship_mk12_2x127mm.LN[1].distanceMin = 10
-GT_t.WS_t.ship_mk12_2x127mm.LN[1].distanceMax = 56000 -- effective shooting
+GT_t.WS_t.ship_mk12_2x127mm.LN[1].distanceMax = 56000.0 -- effective shooting
 GT_t.WS_t.ship_mk12_2x127mm.LN[1].max_trg_alt = 11300
 GT_t.WS_t.ship_mk12_2x127mm.LN[1].reactionTime = 1
 GT_t.WS_t.ship_mk12_2x127mm.LN[1].beamWidth = math.rad(1);
@@ -128,8 +128,7 @@ GT.WS[ws].drawArgument2 = 1
 GT.WS[ws].reference_angle_Y = math.rad(0)
 GT.WS[ws].angles = {
                     {math.rad(140), math.rad(-140), math.rad(-5), math.rad(75)},
---                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
---                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
+
                     };
 GT.WS[ws].LN[1].fireAnimationArgument = -90;
 GT.WS[ws].LN[1].BR =
@@ -152,8 +151,7 @@ GT.WS[ws].drawArgument2 = 3
 GT.WS[ws].reference_angle_Y = math.rad(0)
 GT.WS[ws].angles = {
                     {math.rad(140), math.rad(-140), math.rad(-5), math.rad(75)},
---                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
---                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
+
                     };
 GT.WS[ws].LN[1].fireAnimationArgument = -90;
 GT.WS[ws].LN[1].BR = 
@@ -173,11 +171,10 @@ GT.WS[ws].area = 'TurretRear'
 GT.WS[ws].center = 'CENTER_TURRET_03'
 GT.WS[ws].drawArgument1 = 4
 GT.WS[ws].drawArgument2 = 5
-GT.WS[ws].reference_angle_Y = math.rad(180)
+GT.WS[ws].reference_angle_Y = math.rad(-180)
 GT.WS[ws].angles = {
-                    {math.rad(140), math.rad(-140), math.rad(-5), math.rad(75)},
---                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
---                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
+                    {math.rad(-140), math.rad(140), math.rad(-5), math.rad(75)},
+
                     };
 GT.WS[ws].LN[1].fireAnimationArgument = -90;
 GT.WS[ws].LN[1].BR = 
@@ -192,14 +189,14 @@ GT.WS[ws].LN[1].BR =
 
 ws = GT_t.inc_ws();
 GT.WS[ws] = {}
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Oerlikon_20)
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.phalanx )
 GT.WS[ws].area = 'HullRear'
 GT.WS[ws].center = 'CENTER_TURRET_04'
 GT.WS[ws].drawArgument1 = 9
 GT.WS[ws].drawArgument2 = 10
-GT.WS[ws].reference_angle_Y = math.rad(180)
+GT.WS[ws].reference_angle_Y = math.rad(-180)
 GT.WS[ws].angles = {
-                    {math.rad(180), math.rad(-180), math.rad(-5), math.rad(85)},
+                    {math.rad(-45), math.rad(45), math.rad(-5), math.rad(85)},
 --                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
 --                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
                     };
@@ -212,14 +209,14 @@ GT.WS[ws].LN[1].BR =
 
 ws = GT_t.inc_ws();
 GT.WS[ws] = {}
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Oerlikon_20)
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.phalanx )
 GT.WS[ws].area = 'HullRear'
 GT.WS[ws].center = 'CENTER_TURRET_05'
 GT.WS[ws].drawArgument1 = 11
 GT.WS[ws].drawArgument2 = 12
-GT.WS[ws].reference_angle_Y = math.rad(180)
+GT.WS[ws].reference_angle_Y = math.rad(-90)
 GT.WS[ws].angles = {
-                    {math.rad(180), math.rad(-180), math.rad(-5), math.rad(85)},
+                    {math.rad(-20), math.rad(-175), math.rad(-5), math.rad(85)},
 --                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
 --                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
                     };
@@ -232,14 +229,14 @@ GT.WS[ws].LN[1].BR =
 
 ws = GT_t.inc_ws();
 GT.WS[ws] = {}
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Oerlikon_20)
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.phalanx )
 GT.WS[ws].area = 'HullRear'
 GT.WS[ws].center = 'CENTER_TURRET_06'
 GT.WS[ws].drawArgument1 = 13
 GT.WS[ws].drawArgument2 = 14
-GT.WS[ws].reference_angle_Y = math.rad(180)
+GT.WS[ws].reference_angle_Y = math.rad(90)
 GT.WS[ws].angles = {
-                    {math.rad(180), math.rad(-180), math.rad(-5), math.rad(85)},
+                    {math.rad(135), math.rad(10), math.rad(-5), math.rad(85)},
 --                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
 --                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
                     };
@@ -279,8 +276,8 @@ set_recursive_metatable(GT.sensor, GT_t.SN_visual);
 GT.sensor.height = 15;
 GT.sensor.max_range_finding_target = 500;
 ----------------------------------------------------
-GT.DetectionRange	= 20000;
-GT.ThreatRange		= 12000;
+GT.DetectionRange  	= GT.airFindDist;
+GT.ThreatRange 		= GT.airWeaponDist;
 GT.Singleton		= "yes";
 GT.mapclasskey		= "P0091000068"; --map icon >>MissionEditor\data\NewMap\images
 GT.attribute		= {wsType_Navy,wsType_Ship,wsType_ArmedShip,wsType_GenericLightArmoredShip,
