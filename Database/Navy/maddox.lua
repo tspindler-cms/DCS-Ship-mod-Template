@@ -52,8 +52,8 @@ GT.animation_arguments = {
 	radar1_rotation = 7,
 	radar2_rotation = 8
 }
-GT.radar1_period = 5; --speed
-GT.radar2_period = 30;
+GT.radar1_period = 4; --speed
+GT.radar2_period = 4;
 
 --Damage Model
 GT.DM = {
@@ -165,7 +165,7 @@ GT_t.LN_t.ship_mk33_76mm_AIR.PL = {}
 GT_t.LN_t.ship_mk33_76mm_AIR.PL[1] = {
 							shell_name = {"vwv_mk33_76mm_AIR"},
 							automaticLoader = false,
-							shot_delay = 2,
+							shot_delay = 1.3333,
 							ammo_capacity = 352,
 						}
 
