@@ -122,7 +122,7 @@ GT_t.LN_t.ship_mk12_127mm_AIR.PL = {}
 GT_t.LN_t.ship_mk12_127mm_AIR.PL[1] = {
 							shell_name = {"vwv_mk12_127mm_AIR"},
 							automaticLoader = false,
-							shot_delay = 2,
+							shot_delay = 5,
 							ammo_capacity = 352,
 						}
 
@@ -139,7 +139,7 @@ GT_t.LN_t.ship_mk12_127mm.PL[1] = {
 							-- unclear why the 127_Mk49 shells not work
 							shell_name = {"MK45_127"}, --shell_name = { "127_Mk49_HC_1", "127_Mk49_HC_2" },
 							automaticLoader = false,
-							shot_delay = 2,
+							shot_delay = 5,
 							ammo_capacity = 352,
 						}
 
@@ -169,8 +169,6 @@ GT_t.LN_t.ship_mk33_76mm_AIR.PL[1] = {
 							ammo_capacity = 352,
 						}
 
-
---[[
 ws = GT_t.inc_ws();
 GT.WS[ws] = {}
 GT.WS[ws].area = 'TurretFront'
@@ -366,7 +364,7 @@ GT.WS[ws].LN[1].BR =
 							connector_name = 'POINT_20mm_3',
 						}
 					};
---]]
+
 ws = GT_t.inc_ws();
 GT.WS[ws] = {}
 set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_mk33_76mm)
