@@ -175,15 +175,15 @@ GT.WS[ws].area = 'TurretFront'
 GT.WS[ws].center = 'CENTER_TURRET_01'
 GT.WS[ws].omegaY = math.rad(30);
 GT.WS[ws].omegaZ = math.rad(20);
-GT.WS[ws].drawArgument1 = 0
-GT.WS[ws].drawArgument2 = 1
-GT.WS[ws].reference_angle_Z = math.rad(0)
+GT.WS[ws].drawArgument1 = 0;
+GT.WS[ws].drawArgument2 = 1;
+GT.WS[ws].reference_angle_Z = math.rad(0);
 GT.WS[ws].angles = {
                     {math.rad(140), math.rad(-140), math.rad(-10), math.rad(85)},
                     };
 -- first set of launchers
 __LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_mk12_127mm_AIR);
-__LN.sightMaxTanVel = 300
+__LN.sightMaxTanVel = 300;
 __LN.BR = {{ connector_name = 'POINT_GUN_127mm_1_1',
 							recoilArgument = 33,
 							recoilTime = 0.2 }}
@@ -473,7 +473,7 @@ GT.sensor.max_range_finding_target = 500;
 ----------------------------------------------------
 GT.DetectionRange  	= GT.airFindDist;
 GT.ThreatRange 		= GT.airWeaponDist;
-GT.Singleton		= "yes";
+GT.Singleton		= "no";
 GT.mapclasskey		= "P0091000068"; --map icon >>MissionEditor\data\NewMap\images
 GT.attribute		= {wsType_Navy,wsType_Ship,wsType_ArmedShip,wsType_GenericLightArmoredShip,
 						"Cruisers",
