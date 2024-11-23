@@ -100,8 +100,8 @@ GT_t.WSN_t[20] = WSN_20;
 
 GT_t.WS_t.ship_mk12_2x127mm = {name = "Mk12 5inch 38cal Twin"};
 GT_t.WS_t.ship_mk12_2x127mm.angles = {
-                    {math.rad(180), math.rad(-180), math.rad(-10), math.rad(85)},
-                    };
+					{math.rad(180), math.rad(-180), math.rad(-10), math.rad(85)},
+					};
 GT_t.WS_t.ship_mk12_2x127mm.omegaY = math.rad(10); -- Block 1B
 GT_t.WS_t.ship_mk12_2x127mm.omegaZ = math.rad(10); -- Block 1B
 GT_t.WS_t.ship_mk12_2x127mm.pidY = {p=300, i = 0.05, d = 10.0, inn = 1000};
@@ -169,6 +169,36 @@ GT_t.LN_t.ship_mk33_76mm_AIR.PL[1] = {
 	ammo_capacity = 352,
 };
 
+GT_t.WS_t.ship_maddox_oerlikon_20mm = { name = "Maddox Oerlikon 20mm"};
+GT_t.WS_t.ship_maddox_oerlikon_20mm.angles = {
+	{math.rad(180), math.rad(-180), math.rad(-15), math.rad(85)},
+};
+GT_t.WS_t.ship_maddox_oerlikon_20mm.omegaY = math.rad(10); -- Block 1B
+GT_t.WS_t.ship_maddox_oerlikon_20mm.omegaZ = math.rad(10); -- Block 1B
+GT_t.WS_t.ship_maddox_oerlikon_20mm.pidY = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_maddox_oerlikon_20mm.pidZ = {p=300, i = 0.05, d = 10.0, inn = 1000};
+GT_t.WS_t.ship_maddox_oerlikon_20mm.reference_angle_Z = 0;
+
+GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR = {};
+GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR.type = 3;
+GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR.distanceMin = 20;
+GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR.distanceMax = 4341;
+GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR.max_trg_alt = 3083;
+GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR.reactionTime = 2;
+GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR.sensor = {};
+set_recursive_metatable(GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR.sensor, GT_t.WSN_t[20]);
+GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR.PL = {};
+GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR.PL[1] = {
+	shell_name = { "vwv_oerlikon_20mm_AIR" },
+	automaticLoader = false,
+	shot_delay = 0.3333,
+	ammo_capacity = 4000,
+};
+
+
+
+--------------------------------------------------------------
+
 ws = GT_t.inc_ws();
 GT.WS[ws] = {}
 GT.WS[ws].area = 'TurretFront'
@@ -199,8 +229,8 @@ GT.WS[ws].center = 'CENTER_TURRET_01'
 GT.WS[ws].omegaY = math.rad(30);
 GT.WS[ws].omegaZ = math.rad(20);
 GT.WS[ws].angles = {
-                    {math.rad(140), math.rad(-140), math.rad(-10), math.rad(85)},
-                    };
+					{math.rad(140), math.rad(-140), math.rad(-10), math.rad(85)},
+					};
 GT.WS[ws].reference_angle_Z = math.rad(0);
 -- second set of launchers
 __LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_mk12_127mm_AIR);
@@ -224,9 +254,9 @@ GT.WS[ws].reference_angle_Z = math.rad(0)
 GT.WS[ws].omegaY = math.rad(30);
 GT.WS[ws].omegaZ = math.rad(20);
 GT.WS[ws].angles = {
-                    {math.rad(140), math.rad(-140), math.rad(-10), math.rad(85)},
+					{math.rad(140), math.rad(-140), math.rad(-10), math.rad(85)},
 
-                    };
+					};
 -- first set of launchers					
 __LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_mk12_127mm_AIR);
 __LN.sightMaxTanVel = 300
@@ -245,8 +275,8 @@ GT.WS[ws].center = 'CENTER_TURRET_02'
 GT.WS[ws].omegaY = math.rad(30);
 GT.WS[ws].omegaZ = math.rad(20);
 GT.WS[ws].angles = {
-                    {math.rad(140), math.rad(-140), math.rad(-10), math.rad(85)},
-                    };
+					{math.rad(140), math.rad(-140), math.rad(-10), math.rad(85)},
+					};
 GT.WS[ws].reference_angle_Z = math.rad(0);
 -- second set of launchers
 __LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_mk12_127mm_AIR);
@@ -271,8 +301,8 @@ GT.WS[ws].drawArgument2 = 5
 GT.WS[ws].reference_angle_Z = math.rad(0);
 GT.WS[ws].reference_angle_Y = math.rad(-180)
 GT.WS[ws].angles = {
-                    {math.rad(-45), math.rad(45), math.rad(-10), math.rad(85)},
-                    };
+					{math.rad(-45), math.rad(45), math.rad(-10), math.rad(85)},
+					};
 -- first set of launchers					
 __LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_mk12_127mm_AIR);
 __LN.sightMaxTanVel = 300
@@ -291,113 +321,110 @@ GT.WS[ws].center = 'CENTER_TURRET_03'
 GT.WS[ws].omegaY = math.rad(30);
 GT.WS[ws].omegaZ = math.rad(20);
 GT.WS[ws].angles = {
-                    {math.rad(140), math.rad(-140), math.rad(-10), math.rad(85)},
-                    };
+					{math.rad(140), math.rad(-140), math.rad(-10), math.rad(85)},
+					};
 GT.WS[ws].reference_angle_Z = math.rad(0);
 -- second set of launchers
 __LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_mk12_127mm_AIR);
-__LN.sightMaxTanVel = 300
+__LN.sightMaxTanVel = 300;
 __LN.BR = {{ connector_name = 'POINT_GUN_127mm_3_2',
 							recoilArgument = 33,
-							recoilTime = 0.2 }}
+							recoilTime = 0.2 }};
 __LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_mk12_127mm);
 __LN.BR = {{ connector_name = 'POINT_GUN_127mm_3_1',
 							recoilArgument = 33,
-							recoilTime = 0.2 }}
+							recoilTime = 0.2 }};
 
 ws = GT_t.inc_ws();
 GT.WS[ws] = {}
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Oerlikon_20 )
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_maddox_oerlikon_20mm)
 GT.WS[ws].area = 'HullRear'
 GT.WS[ws].center = 'CENTER_TURRET_04'
 GT.WS[ws].drawArgument1 = 9
 GT.WS[ws].drawArgument2 = 10
 GT.WS[ws].reference_angle_Y = math.rad(-180)
 GT.WS[ws].angles = {
-                    {math.rad(-45), math.rad(45), math.rad(-5), math.rad(85)},
---                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
---                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
-                    };
-GT.WS[ws].LN[1].BR = 
-					{
-						{
-							connector_name = 'POINT_20mm_1',
-						}
+					{math.rad(-45), math.rad(45), math.rad(-5), math.rad(85)},
+--					{math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
+--					{math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
 					};
+__LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR);
+__LN.sightMaxTanVel = 300;
+__LN.BR = {{ connector_name = 'POINT_20mm_1',
+							recoilArgument = 33,
+							recoilTime = 0.2 }};
 
 ws = GT_t.inc_ws();
 GT.WS[ws] = {}
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Oerlikon_20 )
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_maddox_oerlikon_20mm)
 GT.WS[ws].area = 'HullRear'
 GT.WS[ws].center = 'CENTER_TURRET_05'
 GT.WS[ws].drawArgument1 = 11
 GT.WS[ws].drawArgument2 = 12
 GT.WS[ws].reference_angle_Y = math.rad(-90)
 GT.WS[ws].angles = {
-                    {math.rad(-20), math.rad(-175), math.rad(-5), math.rad(85)},
---                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
---                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
-                    };
-GT.WS[ws].LN[1].BR = 
-					{
-						{
-							connector_name = 'POINT_20mm_2',
-						}
+					{math.rad(-20), math.rad(-175), math.rad(-5), math.rad(85)},
+--					{math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
+--					{math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
 					};
+__LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR);
+__LN.sightMaxTanVel = 300;
+__LN.BR = {{ connector_name = 'POINT_20mm_2',
+							recoilArgument = 33,
+							recoilTime = 0.2 }};
 
 ws = GT_t.inc_ws();
 GT.WS[ws] = {}
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_Oerlikon_20 )
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_maddox_oerlikon_20mm)
 GT.WS[ws].area = 'HullRear'
 GT.WS[ws].center = 'CENTER_TURRET_06'
 GT.WS[ws].drawArgument1 = 13
 GT.WS[ws].drawArgument2 = 14
 GT.WS[ws].reference_angle_Y = math.rad(90)
 GT.WS[ws].angles = {
-                    {math.rad(135), math.rad(10), math.rad(-5), math.rad(85)},
---                    {math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
---                    {math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
-                    };
-GT.WS[ws].LN[1].BR = 
-					{
-						{
-							connector_name = 'POINT_20mm_3',
-						}
+					{math.rad(135), math.rad(10), math.rad(-5), math.rad(85)},
+--					{math.rad(40), math.rad(-40), math.rad(0), math.rad(65)},
+--					{math.rad(-40), math.rad(-170), math.rad(-7.5), math.rad(65)},
 					};
+__LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_maddox_oerlikon_20mm_AIR);
+__LN.sightMaxTanVel = 300;
+__LN.BR = {{ connector_name = 'POINT_20mm_3',
+							recoilArgument = 33,
+							recoilTime = 0.2 }};
 
 ws = GT_t.inc_ws();
-GT.WS[ws] = {}
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_mk33_76mm)
-GT.WS[ws].area = 'HullRear'
-GT.WS[ws].center = 'CENTER_TURRET_07'
-GT.WS[ws].drawArgument1 = 15
-GT.WS[ws].drawArgument2 = 16
+GT.WS[ws] = {};
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_mk33_76mm);
+GT.WS[ws].area = 'HullRear';
+GT.WS[ws].center = 'CENTER_TURRET_07';
+GT.WS[ws].drawArgument1 = 15;
+GT.WS[ws].drawArgument2 = 16;
 GT.WS[ws].reference_angle_Y = math.rad(90)
 GT.WS[ws].angles = {
-                    {math.rad(135), math.rad(10), math.rad(-5), math.rad(85)},
-                    };	
+					{math.rad(135), math.rad(10), math.rad(-5), math.rad(85)},
+					};	
 __LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_mk33_76mm_AIR);
-__LN.sightMaxTanVel = 300
+__LN.sightMaxTanVel = 300;
 __LN.BR = {{ connector_name = 'POINT_GUN_762mm_1',
 							recoilArgument = 33,
-							recoilTime = 0.2 }}
+							recoilTime = 0.2 }};
 
 ws = GT_t.inc_ws();
-GT.WS[ws] = {}
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_mk33_76mm)
-GT.WS[ws].area = 'HullRear'
-GT.WS[ws].center = 'CENTER_TURRET_08'
-GT.WS[ws].drawArgument1 = 17
-GT.WS[ws].drawArgument2 = 18
-GT.WS[ws].reference_angle_Y = math.rad(-90)
+GT.WS[ws] = {};
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.ship_mk33_76mm);
+GT.WS[ws].area = 'HullRear';
+GT.WS[ws].center = 'CENTER_TURRET_08';
+GT.WS[ws].drawArgument1 = 17;
+GT.WS[ws].drawArgument2 = 18;
+GT.WS[ws].reference_angle_Y = math.rad(-90);
 GT.WS[ws].angles = {
 					{math.rad(-20), math.rad(-175), math.rad(-5), math.rad(85)},
-                    };
+					};
 __LN = add_launcher(GT.WS[ws], GT_t.LN_t.ship_mk33_76mm_AIR);
-__LN.sightMaxTanVel = 300
+__LN.sightMaxTanVel = 300;
 __LN.BR = {{ connector_name = 'POINT_GUN_762mm_2',
 							recoilArgument = 33,
-							recoilTime = 0.2 }}
+							recoilTime = 0.2 }};
 
 ws = GT_t.inc_ws();
 GT.WS[ws] = {};
@@ -460,8 +487,8 @@ GT.DisplayNameShort = _("Maddox") -- Label name
 GT.Rate = 5500.000000 
 
 GT.Sensors = {  OPTIC = {"long-range naval optics", "long-range naval LLTV", "long-range naval FLIR", "long-range air defence optics"}, --optics types
-                RADAR = {"ticonderoga search radar"}, --radar types
-            };
+				RADAR = {"ticonderoga search radar"}, --radar types
+			};
 GT.sensor = {};
 set_recursive_metatable(GT.sensor, GT_t.SN_visual);
 GT.sensor.height = 15;
